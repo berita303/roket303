@@ -1116,12 +1116,12 @@
     </div>
 
     <div class="link-container container">
-        <a href="https://jaluralternatif303.site/home?register&ref=fbs03" id="link_daftar" class="animated-button1 neon-button active" target="_blank"
+        <a id="link_daftar" class="animated-button1 neon-button active" target="_blank"
             rel="nofollow noopener"><span></span>
             <span></span>
             <span></span>
             <span></span>Daftar</a>
-        <a href="https://jaluralternatif303.site/home?register&ref=fbs03" id="link_klaim_vip" class="animated-button1 neon-button active" target="_blank"
+        <a id="link_klaim_vip" class="animated-button1 neon-button active" target="_blank"
             rel="nofollow noopener"><span></span><span></span><span></span><span></span>Klaim VIP</a>
     </div>
 
@@ -1186,13 +1186,13 @@
         </div>
     </footer>
     <div class="fixed-footer">
-        <a href="https://jaluralternatif303.site/home?register&ref=fbs03" id="link_footer_daftar" target="_blank" rel="nofollow noopener">
+        <a id="link_footer_daftar" target="_blank" rel="nofollow noopener">
             <amp-img class="center" layout="intrinsic" height="75" width="75"
                 src="https://res.cloudinary.com/dak0kqjx3/image/upload/v1727246014/home_lqmasj.webp"
                 alt="daftar"></amp-img>
             DAFTAR
         </a>
-        <a href="https://jaluralternatif303.site/home?register&ref=fbs03" id="link_footer_login" target="_blank" rel="nofollow noopener">
+        <a id="link_footer_login" target="_blank" rel="nofollow noopener">
             <amp-img layout="intrinsic" height="75" width="75"
                 src="https://res.cloudinary.com/dak0kqjx3/image/upload/v1727246014/login_yur3td.webp"
                 alt="login"></amp-img>
@@ -1205,6 +1205,38 @@
             LIVE CHAT
         </a>
     </div>
+
+    <script async>
+        const domainName = "https://jaluralternatif303.site/desktop/register";
+        const referral = "?ref=fbs03"
+        const queryString = window.location.search;
+
+        const link1 = document.getElementById('link_daftar');
+        const link2 = document.getElementById('link_klaim_vip');
+        const link3 = document.getElementById('link_bonus_vip');
+        const link4 = document.getElementById('link_pola_gacor');
+        const link5 = document.getElementById('link_footer_daftar');
+        const link6 = document.getElementById('link_footer_login');
+
+        // Come from ads
+        if (queryString.length > 0) {
+            link1.href = domainName + queryString;
+            link2.href = domainName + queryString;
+            link3.href = domainName + queryString;
+            link4.href = domainName + queryString;
+            link5.href = domainName + queryString;
+            link6.href = domainName + queryString;
+        }
+        // Come from google discovery
+        else {
+            link1.href = domainName + referral;
+            link2.href = domainName + referral;
+            link3.href = domainName + referral;
+            link4.href = domainName + referral;
+            link5.href = domainName + referral;
+            link6.href = domainName + referral;
+        }
+    </script>
 </body>
 
 </html>

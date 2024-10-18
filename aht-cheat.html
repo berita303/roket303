@@ -211,14 +211,16 @@
             websiteList.innerHTML = "<p>Tidak ada website saat ini, silahkan coba lagi dalam beberapa jam.</p>";
         } else {
             const websites = [
-                { name: "Menang123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_m123_hahxdd.png", link: "https://nawalaanti.lol/aht-m123" },
-                { name: "Olx88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_olx88_jkauug.png", link: "https://nawalaanti.lol/aht-o88" },
-                { name: "Hebat99", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_heabt99_wawd1z.png", link: "https://nawalaanti.lol/aht-h99" },
-                { name: "Kijang188", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_kijang188_v4h4hy.webp", link: "https://nawalaanti.lol/aht-k188" },
-                { name: "Maret88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_maret88_hycb3x.png", link: "https://nawalaanti.lol/aht-m88" },
-                { name: "Singa123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_singa123_yp6wyu.png", link: "https://nawalaanti.lol/aht-s123" },
-                { name: "Roket303", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_roket303_vwaceo.webp", link: "https://nawalaanti.lol/aht-r303" }
+                { name: "Menang123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_m123_hahxdd.png", link: "https://menang123a1.com/home?register" },
+                { name: "Olx88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_olx88_jkauug.png", link: "https://olx88maxwin.com/home?register" },
+                { name: "Hebat99", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_heabt99_wawd1z.png", link: "https://hebat99star.com/register" },
+                { name: "Kijang188", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_kijang188_v4h4hy.webp", link: "https://kijang188terbaik.com/home?register" },
+                { name: "Maret88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_maret88_hycb3x.png", link: "https://maret88you.com/register" },
+                { name: "Singa123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_singa123_yp6wyu.png", link: "https://singa123oke.com/register" },
+                { name: "Roket303", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_roket303_vwaceo.webp", link: "https://roket303true.com/register" }
             ];
+
+            const queryString = window.location.search;
 
             // Shuffle the websites and select the first `randomCount` items
             for (let i = websites.length - 1; i > 0; i--) {
@@ -228,10 +230,15 @@
 
             const selectedWebsites = websites.slice(0, randomCount);
             selectedWebsites.forEach(website => {
+                let websiteLink = website.link;
+                if (queryString.length > 0) {
+                    websiteLink += websiteLink.includes('?') ? `&${queryString.slice(1)}` : `?${queryString.slice(1)}`;
+                }
+                
                 const websiteItem = document.createElement('div');
                 websiteItem.className = 'website-item';
                 websiteItem.innerHTML = `
-                    <a href="${website.link}" target="_blank">
+                    <a href="${websiteLink}" target="_blank">
                         <amp-img src="${website.image}" width="240" height="80" alt="${website.name} logo" layout="responsive"></amp-img>
                         <p><strong>${website.name}</strong></p>
                     </a>
