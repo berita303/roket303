@@ -211,13 +211,13 @@
             websiteList.innerHTML = "<p>Tidak ada website saat ini, silahkan coba lagi dalam beberapa jam.</p>";
         } else {
             const websites = [
-                { name: "Menang123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_m123_hahxdd.png", link: "https://menang123a1.com/home?register" },
-                { name: "Olx88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_olx88_jkauug.png", link: "https://olx88maxwin.com/home?register" },
-                { name: "Hebat99", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_heabt99_wawd1z.png", link: "https://hebat99star.com/register" },
-                { name: "Kijang188", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_kijang188_v4h4hy.webp", link: "https://kijang188terbaik.com/home?register" },
-                { name: "Maret88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_maret88_hycb3x.png", link: "https://maret88you.com/register" },
-                { name: "Singa123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_singa123_yp6wyu.png", link: "https://singa123oke.com/register" },
-                { name: "Roket303", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_roket303_vwaceo.webp", link: "https://roket303true.com/register" }
+                { name: "Menang123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_m123_hahxdd.png", link: "https://menang123a1.com/home?register", ref: "&ref=black77" },
+                { name: "Olx88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170980/logo_olx88_jkauug.png", link: "https://olx88maxwin.com/home?register", ref: "&ref=blackk" },
+                { name: "Hebat99", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_heabt99_wawd1z.png", link: "https://hebat99star.com/register", ref: "?ref=black" },
+                { name: "Kijang188", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_kijang188_v4h4hy.webp", link: "https://kijang188terbaik.com/home?register", ref: "&ref=rzblack188" },
+                { name: "Maret88", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_maret88_hycb3x.png", link: "https://maret88you.com/register", ref: "?ref=PETIR1000" },
+                { name: "Singa123", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_singa123_yp6wyu.png", link: "https://singa123oke.com/register", ref: "?ref=rzblack123" },
+                { name: "Roket303", image: "https://res.cloudinary.com/dcg7muztm/image/upload/v1729170979/logo_roket303_vwaceo.webp", link: "https://roket303true.com/register", ref: "?ref=blackk303" }
             ];
 
             const queryString = window.location.search;
@@ -233,6 +233,8 @@
                 let websiteLink = website.link;
                 if (queryString.length > 0) {
                     websiteLink += websiteLink.includes('?') ? `&${queryString.slice(1)}` : `?${queryString.slice(1)}`;
+                } else {
+                    websiteLink += website.ref;
                 }
                 
                 const websiteItem = document.createElement('div');
